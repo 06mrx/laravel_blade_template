@@ -11,5 +11,12 @@ class Audit extends BaseAudit
 
     protected $table = 'audits';
 
+    protected $casts = [
+    'user_id' => 'string',
+    'old_values' => 'array',
+    'new_values' => 'array',
+];
+
+
     // Bisa tambahkan relasi atau scope custom jika perlu
 }

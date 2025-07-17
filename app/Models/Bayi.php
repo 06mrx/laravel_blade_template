@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 use OwenIt\Auditing\Contracts\Auditable;
 use OwenIt\Auditing\Auditable as AuditableTrait;
-
-
+use App\Traits\TrackUser;
 class Bayi extends Model implements Auditable
 {
-    use HasFactory, SoftDeletes, AuditableTrait;
+    use HasFactory, SoftDeletes, AuditableTrait, TrackUser;
 
     protected $table = 'tb_bayi'; // Sesuaikan dengan nama tabel kamu
 

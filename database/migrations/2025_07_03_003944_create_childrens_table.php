@@ -22,6 +22,8 @@ return new class extends Migration {
             $table->float('ll')->nullable(); // LL
             $table->float('lk')->nullable(); // LK
             $table->string('ket')->nullable(); // KET
+            $table->uuid('created_by')->nullable();
+            $table->uuid('modified_by')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
