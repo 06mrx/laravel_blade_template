@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\BayiController;
+use App\Http\Controllers\Admin\AuditController;
 
 
 Route::get('/', function () {
@@ -27,9 +28,11 @@ Route::middleware(['auth'])->prefix('admin')->as('admin.')->group(function () {
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);
     Route::resource('users', UserController::class);
+    Route::resource('audit', AuditController::class)->only(['index', 'show']);
+
 });
 
 Route::resource('bayi', BayiController::class);
 // Route untuk restore data yang di-soft delete
 Route::post('bayi/{id}/restore', [BayiController::class, 'restore'])->name('bayi.restore');
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
