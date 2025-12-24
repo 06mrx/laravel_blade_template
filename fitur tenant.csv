@@ -1,0 +1,10 @@
+﻿No,Modul,Deskripsi
+1,Dashboard,Ringkasan informasi penting
+2,MikroTik Management,Tambah/edit MikroTik miliknya
+3,Paket Internet,Kelola plan bandwidth
+4,Pelanggan,"Tambah pelanggan, assign ke paket"
+5,Billing (Opsional),Tagihan &amp; pembayaran pelanggan
+6,Laporan,Statistik pemakaian &amp; pendapatan
+7,Pengaturan,"Edit profil, ganti password, lihat langganan"
+8,Akses Terbatas,Hanya bisa mengakses datanya sendiri
+9,Trial &amp; Langganan,Masa percobaan &amp; upgrade plan

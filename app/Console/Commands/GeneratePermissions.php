@@ -14,7 +14,14 @@ class GeneratePermissions extends Command
         'user' => ['view', 'create', 'edit', 'delete'],
         'role' => ['view', 'create', 'edit', 'delete'],
         'permission' => ['view', 'create', 'edit', 'delete'],
-        'bayi' => ['view', 'create', 'edit', 'delete'],
+        'mikrotik' => ['view', 'create', 'edit', 'delete'],
+        'configuration' => ['view', 'create', 'edit', 'delete'],
+        'invoice' => ['view', 'show', 'markAsPaid'],
+        'bankaccount' => ['view', 'create', 'edit', 'delete'],
+        'billingcycle' => ['view', 'create', 'edit', 'delete'],
+        'odc' => ['view', 'create', 'edit', 'delete'],
+        'odp' => ['view', 'create', 'edit', 'delete'],
+        
     ];
 
     public function handle()

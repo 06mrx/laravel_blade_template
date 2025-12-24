@@ -21,6 +21,9 @@ return new class extends Migration
             $table->uuid('modified_by')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); // Optional: if you want to implement soft deletes
+            $table->uuid('created_by')->nullable();
+            $table->uuid('modified_by')->nullable();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

@@ -59,13 +59,31 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
-            'roles' => 'nullable|array'
+            'roles' => 'nullable|array',
+            'is_active' => 'boolean',
+            'plan_type' => 'in:free,basic,premium',
+            'subscription_start' => 'nullable|date',
+            'subscription_end' => 'nullable|date|after_or_equal:subscription_start',
+            'trial_ends_at' => 'nullable|date',
+            'max_mikrotiks' => 'nullable|integer|min:0',
+            'max_customers' => 'nullable|integer|min:0',
+            'phone' => 'nullable|string',
+            'address' => 'nullable|string',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'is_active' => $request->boolean('is_active'),
+            'plan_type' => $request->input('plan_type', 'free'),
+            'subscription_start' => $request->input('subscription_start'),
+            'subscription_end' => $request->input('subscription_end'),
+            'trial_ends_at' => $request->input('trial_ends_at'),
+            'max_mikrotiks' => $request->input('max_mikrotiks'),
+            'max_customers' => $request->input('max_customers'),
+            'phone' => $request->input('phone'),
+            'address' => $request->input('address'),
         ]);
 
         if ($request->has('roles')) {
@@ -88,10 +106,32 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'password' => 'nullable|min:6',
-            'roles' => 'nullable|array'
+            'roles' => 'nullable|array',
+            'is_active' => 'boolean',
+            'plan_type' => 'in:free,basic,premium',
+            'subscription_start' => 'nullable|date',
+            'subscription_end' => 'nullable|date|after_or_equal:subscription_start',
+            'trial_ends_at' => 'nullable|date',
+            'max_mikrotiks' => 'nullable|integer|min:0',
+            'max_customers' => 'nullable|integer|min:0',
+            'phone' => 'nullable|string',
+            'address' => 'nullable|string',
         ]);
 
-        $data = $request->only(['name', 'email']);
+        $data = $request->only([
+            'name',
+            'email',
+            'is_active',
+            'plan_type',
+            'subscription_start',
+            'subscription_end',
+            'trial_ends_at',
+            'max_mikrotiks',
+            'max_customers',
+            'phone',
+            'address'
+        ]);
+
         if ($request->filled('password')) {
             $data['password'] = bcrypt($request->password);
         }

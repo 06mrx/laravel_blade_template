@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-semibold text-gray-700">Log Aktivitas Sistem</h2>
+        <h2 class="text-xl font-semibold text-gray-700">System Activity Log</h2>
         <div class="flex space-x-4 items-center">
 
             <!-- Form Pencarian -->

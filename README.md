@@ -21,3 +21,26 @@ php artisan migrate
 
 # 4. Seed data awal (user admin, role & lainnya)
 php artisan db:seed
+
+
+Laravel DB:
+- users (tenant)
+  └── mikrotiks
+  └── packages (paket bandwidth)
+  └── customers (data pelanggan)
+       └── username (sama dengan radcheck.username)
+       └── package_id
+       └── expired_at
+       └── status
+
+Radius DB:
+- radcheck (autentikasi)
+  └── username
+  └── attribute (password)
+- radreply (atribut tambahan)
+  └── username
+  └── attribute (rate-limit, session-timeout, dll)
+- radippool (IP Pool)
+  └── pool_name
+  └── framedipaddress
+  └── groupname (jika pakai group)

@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-semibold text-gray-700">All Users</h2>
+        <h2 class="text-xl font-semibold text-gray-700">All Permission</h2>
         <div class="flex space-x-4 items-center">
             <!-- Form Pencarian -->
             <form action="{{ route('admin.permissions.index') }}" method="GET" class="relative">
